@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cutoff: MyString
+  available: MyString
+  schedule_id: 
+
+two:
+  cutoff: MyString
+  available: MyString
+  schedule_id: 

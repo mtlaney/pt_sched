@@ -1,0 +1,32 @@
+<h1>Listing Schedules</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lh region</th>
+      <th>Orig</th>
+      <th>Dest</th>
+      <th>Rail</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedules.each do |schedule| %>
+      <tr>
+        <td><%= schedule.lh_region %></td>
+        <td><%= schedule.orig %></td>
+        <td><%= schedule.dest %></td>
+        <td><%= schedule.rail %></td>
+        <td><%= link_to 'Show', schedule, class: "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_schedule_path(schedule), class: "btn btn-default" %></td>
+        <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Schedule', new_schedule_path, class: "btn btn-primary" %>
+<%= link_to 'Search Schedules', search_path, class: "btn btn-primary" %>

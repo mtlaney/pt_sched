@@ -1,0 +1,24 @@
+
+
+<p>
+  <strong>Lh region:</strong>
+  <%= @schedule.lh_region %>
+</p>
+
+<p>
+  <strong>Orig:</strong>
+  <%= @schedule.orig %>
+</p>
+
+<p>
+  <strong>Dest:</strong>
+  <%= @schedule.dest %>
+</p>
+
+<p>
+  <strong>Rail:</strong>
+  <%= @schedule.rail %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

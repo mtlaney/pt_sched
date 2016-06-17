@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lh_region: MyString
+  orig: MyString
+  dest: MyString
+  rail: MyString
+
+two:
+  lh_region: MyString
+  orig: MyString
+  dest: MyString
+  rail: MyString
