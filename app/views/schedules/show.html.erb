@@ -1,24 +1,42 @@
 
+<div class="main_content">
+  <div class="col-md-12">
+    <p><strong>Lh region:</strong><%= @schedule.lh_region %></p>
+    <p><strong>Orig:</strong><%= @schedule.orig %></p>
+    <p><strong>Dest:</strong><%= @schedule.dest %></p>
+    <p><strong>Rail:</strong><%= @schedule.rail %></p>
+  </div>
 
-<p>
-  <strong>Lh region:</strong>
-  <%= @schedule.lh_region %>
-</p>
+  <div class="row">
+    <div class="col-md-6">
+      <div id="move">
+        <h2>Legs</h2>
+        <ul>
+          <% @schedule.moves.each do |move| %>
+          <li><%= move.cutoff %></li>
+          <li><%= move.available %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div id="equipment">
+        <h2>Equipment Preferences</h2>
+        <ul>
+          <% @schedule.equipment.each do |equipment| %>
+          <li><%= equipment.equipment_preference %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Orig:</strong>
-  <%= @schedule.orig %>
-</p>
+  <div class="row">
+    <div class-"col-md-12">
+    <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+    <%= link_to 'Back', schedules_path %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Dest:</strong>
-  <%= @schedule.dest %>
-</p>
 
-<p>
-  <strong>Rail:</strong>
-  <%= @schedule.rail %>
-</p>
-
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', schedules_path %>

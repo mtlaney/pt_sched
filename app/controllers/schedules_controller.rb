@@ -57,7 +57,7 @@ class SchedulesController < ApplicationController
     @schedule.destroy
     respond_to do |format|
       format.html { redirect_to search_path, notice: 'Schedule was successfully destroyed.' }
-      format.json { head :no_content }      
+      format.json { head :no_content }
     end
   end
 
@@ -69,6 +69,6 @@ class SchedulesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def schedule_params
-      params.require(:schedule).permit(:lh_region, :orig, :dest, :rail, moves_attributes: [:id, :cutoff, :arrival, :_destroy], equipment_attributes: [:id, :equipment_preference, :_destroy] )
+      params.require(:schedule).permit(:lh_region, :orig, :dest, :rail, moves_attributes: [:id, :cutoff, :available, :_destroy], equipment_attributes: [:id, :equipment_preference, :_destroy])
     end
 end
