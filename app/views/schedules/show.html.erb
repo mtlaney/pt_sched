@@ -1,10 +1,10 @@
 
 <div class="main_content">
   <div class="col-md-12">
-    <p><strong>Lh region:</strong><%= @schedule.lh_region %></p>
-    <p><strong>Orig:</strong><%= @schedule.orig %></p>
-    <p><strong>Dest:</strong><%= @schedule.dest %></p>
-    <p><strong>Rail:</strong><%= @schedule.rail %></p>
+    <p><strong>Linehaul Region:</strong><%= @schedule.lh_region %></p>
+    <p><strong>Rail Origin:</strong><%= @schedule.orig %></p>
+    <p><strong>Rail Destination:</strong><%= @schedule.dest %></p>
+    <p><strong>Rail Carrier:</strong><%= @schedule.rail %></p>
   </div>
 
   <div class="row">
@@ -13,8 +13,8 @@
         <h2>Legs</h2>
         <ul>
           <% @schedule.moves.each do |move| %>
-          <li><%= move.cutoff %></li>
-          <li><%= move.available %></li>
+          <li>Cutoff <%= move.cutoff %></li>
+          <li>Available <%= move.available %></li><br>
           <% end %>
         </ul>
       </div>
