@@ -1,0 +1,34 @@
+= simple_form_for @schedule, html: { multipart: true } do |f|
+  - if @schedule.errors.any?
+    #errors
+      %p
+        = @schedule.errors.count
+          Prevented this recipe froms saving
+      %ul
+        - @schedule.errors.full_messages.each do |msg|
+          %li= msg
+  .panel-body
+    = f.input :lh_region, input_html: { class: 'form-control' }
+    = f.input :orig, input_html: { class: 'form-control' }
+    = f.input :dest, input_html: { class: 'form-control' }
+    = f.input :rail, input_html: { class: 'form-control' }
+
+    .row
+      .col-md-6
+        %h3 Cutoff and Arrive
+        #moves
+          = f.simple_fields_for :moves do |move|
+            = render 'move_fields', f: move
+          .links
+            = link_to_add_association 'Add Cutoff/Arrive', f, :moves, class: "btn btn-default add-button"
+
+      .col-md-6
+        %h3 Equipment Type
+        #directions
+          = f.simple_fields_for :equipment do |equipment|
+            = render 'equipment_fields', f: equipment
+          .links
+            = link_to_add_association 'Add Equipment', f, :directions, class: "btn btn-default add-button"
+
+  = f.button :submit, class: "btn btn-primary"
+

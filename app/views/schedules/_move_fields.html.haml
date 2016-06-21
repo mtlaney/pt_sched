@@ -1,0 +1,5 @@
+.form-inline.clearfix
+  .nested-fields
+    =f.input :cutoff, input_html: { class: 'form-input form-control' }
+    =f.input :available, input_html: { class: 'form-input form-control' }
+    = link_to_remove_association "Remove Schedule", f, class: "btn btn-default form-button"
