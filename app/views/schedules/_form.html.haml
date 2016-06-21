@@ -6,12 +6,12 @@
           Prevented this recipe froms saving
       %ul
         - @schedule.errors.full_messages.each do |msg|
-          %li= msg
+        %li= msg
   .panel-body
-    = f.input :lh_region, input_html: { class: 'form-control' }
-    = f.input :orig, input_html: { class: 'form-control' }
-    = f.input :dest, input_html: { class: 'form-control' }
-    = f.input :rail, input_html: { class: 'form-control' }
+    = f.input :lh_region, placeholder: "Enter Linehaul Region", input_html: { class: 'form-control' }
+    = f.input :orig, placeholder: "Enter Origin Rail i.e. XALT", input_html: { class: 'form-control' }
+    = f.input :dest, placeholder: "Enter Destination Rail i.e. XSBD", input_html: { class: 'form-control' }
+    = f.input :rail, placeholder: "Enter Rail carrier i.e. NS or NS/BNSF", input_html: { class: 'form-control' }
 
     .row
       .col-md-6
@@ -28,7 +28,7 @@
           = f.simple_fields_for :equipment do |equipment|
             = render 'equipment_fields', f: equipment
           .links
-            = link_to_add_association 'Add Equipment', f, :directions, class: "btn btn-default add-button"
+            = link_to_add_association 'Add Equipment Preference', f, :equipment, class: "btn btn-default add-button"
 
   = f.button :submit, class: "btn btn-primary"
 

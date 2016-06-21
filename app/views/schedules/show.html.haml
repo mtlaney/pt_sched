@@ -1,42 +1,39 @@
 
-<div class="main_content">
-  <div class="col-md-12">
-    <p><strong>Linehaul Region:</strong><%= @schedule.lh_region %></p>
-    <p><strong>Rail Origin:</strong><%= @schedule.orig %></p>
-    <p><strong>Rail Destination:</strong><%= @schedule.dest %></p>
-    <p><strong>Rail Carrier:</strong><%= @schedule.rail %></p>
-  </div>
+.main_content
+  .col-md-12
+    Linehaul Region
+    = @schedule.lh_region
+    %br/
+    %p Rail Origin
+    = @schedule.orig
+    %p Rail Destination
+    = @schedule.dest
+    %p Rail Carrier
+    = @schedule.rail
 
-  <div class="row">
-    <div class="col-md-6">
-      <div id="move">
-        <h2>Legs</h2>
-        <ul>
-          <% @schedule.moves.each do |move| %>
-          <li>Cutoff <%= move.cutoff %></li>
-          <li>Available <%= move.available %></li><br>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div id="equipment">
-        <h2>Equipment Preferences</h2>
-        <ul>
-          <% @schedule.equipment.each do |equipment| %>
-          <li><%= equipment.equipment_preference %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
+  .row
+    .col-md-6
+      .move
+        %h2 Legs
+        %ul
+          - @schedule.moves.each do |move|
+            %li Cutoff
+            = move.cutoff
+            %li Available
+            = move.available
 
-  <div class="row">
-    <div class-"col-md-12">
-    <%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-    <%= link_to 'Back', schedules_path %>
-    </div>
-  </div>
-</div>
+  .row
+    .col-md-6
+      .equipment
+        %h2 Equipment Preferences
+        %ul
+          - @schedule.equipment.each do |equipment|
+            %li= equipment.equipment_preference
+
+  .row
+    .col-md-12
+      = link_to "Edit", edit_schedule_path(@schedule), class: "btn btn-default"
+      = link_to "Back", schedules_path, class: "btn btn-default"
+
 
 

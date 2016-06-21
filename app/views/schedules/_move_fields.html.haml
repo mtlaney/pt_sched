@@ -1,5 +1,5 @@
 .form-inline.clearfix
   .nested-fields
-    =f.input :cutoff, input_html: { class: 'form-input form-control' }
-    =f.input :available, input_html: { class: 'form-input form-control' }
-    = link_to_remove_association "Remove Schedule", f, class: "btn btn-default form-button"
+    =f.input :cutoff, placeholder: "Format MON 2100", input_html: { class: 'form-input form-control' }
+    =f.input :available, placeholder: "Format TUE 2359", input_html: { class: 'form-input form-control' }
+    = link_to_remove_association "Remove Cutoff and Available", f, class: "btn btn-default form-button"
