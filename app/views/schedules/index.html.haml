@@ -1,7 +1,8 @@
-%h1 Listing Schedules
+%h1{:class => "text-center"} Rail Schedules
 
 
-%table
+
+%table{:class => "table table-striped"}
   %thead
     %tr
       %th LH Region
@@ -9,16 +10,16 @@
       %th Dest
       %th Rail
 
-  %tbody
-    - @schedules.each do |schedule|
-      %tr
-        %td= schedule.lh_region
-        %td= schedule.orig
-        %td= schedule.dest
-        %td= schedule.rail
-        %td= link_to 'Show', schedule, class: "btn btn-default"
-        %td= link_to 'Edit', edit_schedule_path(schedule), class: "btn btn-default"
-        %td= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"
+    %tbody
+      - @schedules.each do |schedule|
+        %tr
+          %td= schedule.lh_region
+          %td= schedule.orig
+          %td= schedule.dest
+          %td= schedule.rail
+          %td= link_to 'Show', schedule, class: "btn btn-default"
+          %td= link_to 'Edit', edit_schedule_path(schedule), class: "btn btn-default"
+          %td= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default"
 
 = link_to 'New Schedule', new_schedule_path, class: "btn btn-primary"
 = link_to 'Search Schedules', search_path, class: "btn btn-primary"
